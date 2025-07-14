@@ -1,0 +1,24 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest --coverage",
+    "test:unit": "jest --coverage --testPathPattern='unit'",
+    "test:integration": "jest --coverage --testPathPattern='integration'",
+    "setup-test-db": "node tests/setupTestDB.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongoose": "^6.8.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "supertest": "^6.3.3",
+    "mongodb-memory-server": "^8.10.2",
+    "nodemon": "^2.0.20"
+  }
+}

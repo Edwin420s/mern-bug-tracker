@@ -1,0 +1,16 @@
+{
+  "name": "mern-bug-tracker",
+  "version": "1.0.0",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "start": "concurrently \"cd server && npm start\" \"cd client && npm start\"",
+    "test": "concurrently \"cd server && npm test\" \"cd client && npm test\"",
+    "test:unit": "concurrently \"cd server && npm run test:unit\" \"cd client && npm run test:unit\"",
+    "test:integration": "concurrently \"cd server && npm run test:integration\" \"cd client && npm run test:integration\"",
+    "test:e2e": "cd client && npm run test:e2e",
+    "cypress:open": "cd client && npm run cypress:open"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  }
+}
