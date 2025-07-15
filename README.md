@@ -1,9 +1,6 @@
 # MERN Bug Tracker 🐞
-
-![MERN Stack](https://img.shields.io/badge/MERN-Stack-blue)
-![License: MIT](https://img.shields.io/badge/License-MIT-green)
-
 A full-stack bug tracking application built with **MongoDB**, **Express**, **React**, and **Node.js**, featuring robust error handling, testing, and developer-friendly debugging tools.
+A production-ready bug tracking system with comprehensive error handling and testing built on the MERN stack.
 
 ---
 
@@ -19,8 +16,10 @@ A full-stack bug tracking application built with **MongoDB**, **Express**, **Rea
 ---
 
 🚀 Quick Start
+
+```
 # Clone repository
-git clone https://github.com/yourusername/mern-bug-tracker.git
+git clone https://github.com/Edwin420s/mern-bug-tracker.git
 cd mern-bug-tracker
 
 # Install dependencies
@@ -32,7 +31,9 @@ cp client/.env.example client/.env
 
 # Start development servers
 npm start
+```
 ---
+Access at: http://localhost:3000
 
 ## 🛠️ Tech Stack
 
@@ -74,7 +75,29 @@ mern-bug-tracker/
 ---
 
 ## 🔧 Error Handling Architecture
-
+```
+sequenceDiagram
+    Frontend->>Backend: API Request
+    Backend->>Controller: Process request
+    alt Error occurs
+        Controller->>ErrorHandler: Forward error
+        ErrorHandler->>Frontend: Structured response
+    else Success
+        Controller->>Frontend: Success response
+    end
+```
+Response Format
+```
+{
+  "success": false,
+  "message": "Validation failed",
+  "errors": {
+    "title": "Required field",
+    "status": "Must be 'open' or 'closed'"
+  },
+  "stack": "Error trace (dev only)"
+}
+```
 ### Backend Structure
 
 ```
